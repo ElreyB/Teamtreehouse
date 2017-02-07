@@ -1,0 +1,32 @@
+---
+- !ruby/object:Contact
+  phone_numbers: []
+  addresses: []
+  first_name: Erley
+  middle_name: Casanova
+  last_name: Belmonti
+- !ruby/object:Contact
+  phone_numbers:
+  - !ruby/object:PhoneNumber
+    kind: Home
+    number: 383-383-4488
+  addresses:
+  - !ruby/object:Address
+    kind: Home
+    street_1: 1020 University St.
+    street_2: ''
+    city: Seattle
+    state: WA
+    postal_code: '98101'
+  first_name: Oscar
+  middle_name: ''
+  last_name: Bartra
+- !ruby/object:Contact
+  phone_numbers:
+  - !ruby/object:PhoneNumber
+    kind: Work
+    number: 384-985-1234
+  addresses: []
+  first_name: Lounh
+  middle_name: ''
+  last_name: Phounk
