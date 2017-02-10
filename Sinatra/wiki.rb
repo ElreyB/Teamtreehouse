@@ -21,12 +21,6 @@ def delete_content(title)
 	File.delete("pages/#{title}.txt")
 end
 
-def pages_list
-	Dir.foreach("pages") do |file|
-		puts file
-	end
-end
-
 get "/" do 
 	erb :welcome
 end
@@ -36,6 +30,7 @@ get "/new" do
 end
 
 get "/list" do
+	@pages = Dir.new("pages")
 	erb :list
 end
 
