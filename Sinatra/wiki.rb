@@ -1,6 +1,6 @@
 require 'sinatra'
 require 'uri'
-
+ 
 def escape(string)
   Rack::Utils.escape_html(string)
 end
@@ -21,12 +21,22 @@ def delete_content(title)
 	File.delete("pages/#{title}.txt")
 end
 
+def pages_list
+	Dir.foreach("pages") do |file|
+		puts file
+	end
+end
+
 get "/" do 
 	erb :welcome
 end
 
 get "/new" do 
 	erb :new
+end
+
+get "/list" do
+	erb :list
 end
 
 get "/:title" do
