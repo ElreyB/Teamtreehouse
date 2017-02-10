@@ -1,6 +1,10 @@
 require 'sinatra'
 require 'uri'
 
+def escape(string)
+  Rack::Utils.escape_html(string)
+end
+
 def page_content(title)
   File.read("pages/#{title}.txt")
 rescue Errno::ENOENT
