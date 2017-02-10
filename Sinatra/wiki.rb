@@ -1,6 +1,6 @@
 require 'sinatra'
 require 'uri'
-
+ 
 def escape(string)
   Rack::Utils.escape_html(string)
 end
@@ -27,6 +27,11 @@ end
 
 get "/new" do 
 	erb :new
+end
+
+get "/list" do
+	@pages = Dir.new("pages")
+	erb :list
 end
 
 get "/:title" do
