@@ -17,6 +17,10 @@ def delete_content(title)
 	File.delete("pages/#{title}.txt")
 end
 
+def show_title(folder)
+	Dir.new(folder)
+end
+
 get "/" do 
 	erb :welcome
 end
@@ -26,7 +30,7 @@ get "/new" do
 end
 
 get "/list" do
-	@pages = Dir.new("pages")
+	@pages = show_title("pages")
 	erb :list
 end
 
