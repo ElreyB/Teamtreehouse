@@ -39,7 +39,7 @@ get "/" do
 end
 
 get "/signatures/new" do
-  erb :new
+  redirect "/"
 end
 
 get "/:index/edit" do 
