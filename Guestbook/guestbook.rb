@@ -48,6 +48,10 @@ get "/:index/edit" do
 	erb :edit
 end
 
+get "/signatures" do
+	erb :signatures
+end
+
 post "/signatures/create" do 
 	save_signature(params[:signature])
 	redirect "/signatures/new"

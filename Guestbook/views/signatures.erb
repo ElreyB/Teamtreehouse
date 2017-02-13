@@ -1,0 +1,12 @@
+<h1>Signatures</h1>
+
+<div>
+	<ol>
+		<% File.foreach("signatures.txt").with_index do |line, line_num| %>
+	    	<li><%= "#{line}" %></li>
+	  <% end %>  
+	</ol>
+</div>
+
+
+<a href="/">Back to home page</a>
