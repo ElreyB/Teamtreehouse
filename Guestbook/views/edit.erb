@@ -1,0 +1,7 @@
+<p>Please enter your name below.</p>
+
+<form method="post" action="/signatures/<%= @index %>">
+	<input type="hidden" name="_method" value="put">
+  <input type="text" name="signature" value="<%= @signature %>">
+  <input type="submit">
+</form>
