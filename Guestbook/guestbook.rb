@@ -1,5 +1,5 @@
 require 'sinatra'
-
+# Saves and append the signature to text file
 def save_signature(signature)
   File.open("signatures.txt", "a") do |file|
     file.puts signature
@@ -12,6 +12,16 @@ def load_signature(index)
   # Parameter is a string; convert to integer
   index = index.to_i
   lines[index]
+end
+
+# Updates the line at the given index and re-saves the file.
+def update_signature(index, signature)
+  lines = File.readlines("signatures.txt")
+  index = index.to_i
+  lines[index] = signature
+  File.open("signatures.txt", "w") do |file|
+    file.puts lines
+  end
 end
 
 get "/" do 
@@ -30,6 +40,11 @@ end
 
 post "/signatures/create" do 
 	save_signature(params[:signature])
+	redirect "/signatures/new"
+end
+
+put "/signatures/:index" do
+	update_signature(params[:index], params[:signature])
 	redirect "/signatures/new"
 end
 
