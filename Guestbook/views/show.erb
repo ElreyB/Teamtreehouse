@@ -1,5 +1,6 @@
 <p><%= @signature %></p>
 
-<form>
+<form method="post" action="/signatures/<%= @index %>">
+	<input type="hidden" name="_method" value="delete">
   <input type="submit" value="Delete This Signature"/>
 </form>

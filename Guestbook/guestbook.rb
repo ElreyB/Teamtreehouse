@@ -24,6 +24,16 @@ def update_signature(index, signature)
   end
 end
 
+# Deletes the line at the given index and re-saves the file.
+def delete_signature(index)
+  lines = File.readlines("signatures.txt")
+  index = index.to_i
+  lines.delete_at(index)
+  File.open("signatures.txt", "w") do |file|
+    file.puts lines
+  end
+end
+
 get "/" do 
 	erb :welcome
 end
@@ -48,4 +58,7 @@ put "/signatures/:index" do
 	redirect "/signatures/new"
 end
 
-
+delete "/signatures/:index" do
+	delete_signature(params[:index])
+	redirect "/signatures/new"
+end
