@@ -39,7 +39,7 @@ get "/" do
 end
 
 get "/signatures/new" do
-  redirect "/"
+  erb :new
 end
 
 get "/:index/edit" do 
@@ -64,5 +64,5 @@ end
 
 delete "/signatures/:index" do
 	delete_signature(params[:index])
-	redirect "/signatures/new"
+	erb :signatures
 end
