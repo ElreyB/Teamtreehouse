@@ -1,10 +1,12 @@
 body {
   background-color: #edeff0;
+  background-image: url("images/home.jpg");
   font-family: "Helvetica", Arial, sans-serif;
   padding: 40px;
   text-align: center;
   color: #333;
   font-size: 18px;
+
 }
 
 h1 {
@@ -60,7 +62,7 @@ div {
   text-align: left;
   width: 50%;
   margin: 0 auto;
-  background-color: #fff;
+  background-color: #77DE37;
   padding: 50px;
   border-radius: 5px;
   border-bottom: solid 2px #ddd;
