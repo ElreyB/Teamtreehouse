@@ -62,3 +62,11 @@ p array.inject{|sum, element| sum += element}
 p array.inject(10){|sum, element| sum += element}
 puts "-----------"
 
+# .chunk
+p array.chunk{|item| item.odd?}.each{|even, array| p [even, array]}
+puts "-----------"
+
+# .collect
+p array.collect{"Elrey"}
+puts "-----------"
+
